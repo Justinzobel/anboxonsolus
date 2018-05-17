@@ -17,7 +17,7 @@ cd anbox/kernel
 
 ##install anbox dependencies via eopkg
 
-sudo eopkg install lxc dbus dbus-devel protobuf protobuf-devel gtest-devel libboost libboost-devel libcap2-devel sdl2-devel sdl2-image-devel glib2-devel mesalib mesalib-devel
+#sudo eopkg install lxc dbus dbus-devel protobuf protobuf-devel gtest-devel libboost libboost-devel libcap2-devel sdl2-devel sdl2-image-devel glib2-devel mesalib mesalib-devel
 
 ##build and install anbox dependencies that are not in eopkg
 
@@ -38,12 +38,21 @@ sudo eopkg install lxc dbus dbus-devel protobuf protobuf-devel gtest-devel libbo
 
 ##build anbox
 
+#cd /tmp/buildspace/anbox
+#mkdir build
+#cd build
+#cmake ..
+#make
+#make install
+
+## OR USE SNAP
+
+sudo eopkg install snapd
+snap install snapcraft
+snap install lxd
+lxd init
 cd /tmp/buildspace/anbox
-mkdir build
-cd build
-cmake ..
-make
-make install
+snapcraft --cleanbuild
 
 ##get android image
 
