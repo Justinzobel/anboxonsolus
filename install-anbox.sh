@@ -50,7 +50,12 @@ cd anbox/kernel
 sudo eopkg install snapd
 snap install snapcraft
 snap install lxd
-lxd init
+
+lxd init #as root
+
+#sudo does not work here
+#sudo bash -c " " does not work here
+
 cd /tmp/buildspace/anbox
 snapcraft --cleanbuild
 
