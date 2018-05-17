@@ -15,8 +15,6 @@ cd anbox/kernel
 	#build and install kernel modules
 	#apply kernel patches
 
-cd /tmp/buildspace/anbox
-
 ##install anbox dependencies via eopkg
 
 sudo eopkg install lxc dbus dbus-devel protobuf protobuf-devel gtest-devel libboost libboost-devel libcap2-devel sdl2-devel sdl2-image-devel glib2-devel mesalib mesalib-devel
@@ -41,8 +39,11 @@ sudo eopkg install lxc dbus dbus-devel protobuf protobuf-devel gtest-devel libbo
 ##build anbox
 
 cd /tmp/buildspace/anbox
-cmake
-cmake install
+mkdir build
+cd build
+cmake ..
+make
+make install
 
 ##get android image
 
