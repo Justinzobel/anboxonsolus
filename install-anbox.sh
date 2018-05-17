@@ -2,7 +2,7 @@
 
 ##install kernel module dependencies
 
-sudo eopkg install git cmake pkg-config linux-headers
+sudo eopkg install make gcc g++ git cmake pkg-config linux-headers
 
 ##build kernel modules
 
